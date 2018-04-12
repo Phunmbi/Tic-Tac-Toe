@@ -35,15 +35,13 @@ function play(piece) {
         piece.innerHTML = game.playerX;
         trackGameStatus();
         setCurrentPlayer(game.playerO);
-
-
     } else if (game.currentPlayer == game.playerO) {
         piece.innerHTML = game.playerO;
         trackGameStatus();
         setCurrentPlayer(game.playerX);
     }
-
     game.moves ++;
+    draw();
 }
 
 function trackGameStatus() {
@@ -57,7 +55,6 @@ function trackGameStatus() {
 
     switch (true) {
         case one.innerHTML === playerTracker && two.innerHTML === playerTracker && three.innerHTML === playerTracker:
-            console.log(playerTracker);
             winner(one, two, three);
             break;
         case four.innerHTML === playerTracker && five.innerHTML === playerTracker && six.innerHTML === playerTracker:
@@ -88,36 +85,27 @@ function trackGameStatus() {
 
 
 function draw() {
-    console.log("ayyyy1");
-    if (game.moves == 9) {
-        console.log("hlkjfa;k2")
-        winner.innerHTML = "This time it's a draw, another round";
-        setTimeout(clear, 1500);
+    if (game.moves === 9) {
+        setTimeout(clear, 2500);
     }
 }
 
 function scoreCard(){
-    console.log("wahgba44")
     if (game.currentPlayer == "X") {
         game.playerXcount ++;
-        playerxscore.innerHTML = "Player X: " + game.playerXcount;
+        playerxscore.innerHTML = "Player X :- " + game.playerXcount;
     } else if(game.currentPlayer == "O"){
         game.playerOcount ++;
-        playeroscore.innerHTML = "Player O: " + game.playerOcount;
+        playeroscore.innerHTML = "Player O :- " + game.playerOcount;
     }
 }
 
 function winner(a, b, c) {
-    a.classList.add("win");
-    b.classList.add("win");
-    c.classList.add("win");
-
-    winners.innerHTML = "The winner is Player" + game.currentPlayer;
-    setTimeout(clear, 1500);
-    setTimeout(clearWinner, 2000)
+    winners.innerHTML = "The winner is Player " + game.currentPlayer;
+    setTimeout(clear, 2500);
+    setTimeout(clearWinner, 3000)
 
     scoreCard();
-
 }
 
 function clearWinner(){
@@ -129,7 +117,6 @@ function clearWinner(){
 function clear() {
     for (var i = 0; i < game.boardplaces.length; i++) {
         game.boardplaces[i].innerHTML = "";
-        game.boardplaces[i].classList = "box";
         game.moves = 0;
     }
 };

@@ -18,8 +18,11 @@ section {
         text-align: center;
         .scorecard {
             border: 2px solid #D6CFCB;
-            width: 60%;
+            width: 250px;
             margin: 0 auto;
+            h2{
+                border-bottom: 2px solid #D6CFCB;
+            }
         }
     }
     .box-container {
@@ -31,22 +34,44 @@ section {
             display: flex;
         }
         .box {
-            width: 77px;
-            height: 77px;
-            border: 2px solid #D6CFCB;
+            width: 79px;
+            height: 79px;
+            border: 2px solid black;
             padding: 3px;
             font-size: 50px;
             text-align: center;
             font-weight: bold;
             cursor: pointer;
-            color: black;
+            color: #D6CFCB;
+        }
+        .one, .two, .three{
+            border-top: none;
+        }
+
+        .one, .four, .seven{
+            border-left: none;
+        }
+
+        .three, .six, .nine{
+            border-right: none;
+        }
+
+        .seven, .eight, .nine{
+            border-bottom: none;
         }
     }
     .buttondiv {
         text-align: center;
+        .replay{
+            button{
+                font-family: 'Raleway', sans-serif;
+                background-color: #CCB7AE;
+                color: black;
+                padding: 15px;
+                border: none;
+                border-radius: 5px;
+                font-weight: 700;
+            }
+        }
     }
-}
-
-.win {
-    color: red;
 }
