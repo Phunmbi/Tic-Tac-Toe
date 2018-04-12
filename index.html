@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body>
+    <section>
+        <div class="title">
+            <h2>Tic Tac Toe</h2>
+            <div class="scorecard">
+                <h3 id="scorecard">Scorecard</h3>
+                <h3 id="playerxscore">Player X: 0</h3>
+                <h3 id="playeroscore">Player O: 0</h3>
+            </div>
+        </div>
+        <div class="box-container">
+            <div class="A">
+                <div id="one" class="box" onclick="play(this)"></div>
+                <div id="two" class="box" onclick="play(this)"></div>
+                <div id="three" class="box" onclick="play(this)"></div>
+            </div>
+            <div class="B">
+                <div id="four" class="box" onclick="play(this)"></div>
+                <div id="five" class="box" onclick="play(this)"></div>
+                <div id="six" class="box" onclick="play(this)"></div>
+            </div>
+            <div class="C">
+                <div id="seven" class="box" onclick="play(this)"></div>
+                <div id="eight" class="box" onclick="play(this)"></div>
+                <div id="nine" class="box" onclick="play(this)"></div>
+            </div>
+        </div>
+        <div class="buttondiv">
+            <div class="winner">
+                <h3 id="winner"></h3>
+            </div>
+            <div class="replay">
+                <button id="button">Play Again</button>
+            </div>
+        </div>
+    </section>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
