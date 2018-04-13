@@ -40,7 +40,7 @@ function play(piece) {
         trackGameStatus();
         setCurrentPlayer(game.playerX);
     }
-    game.moves ++;
+    game.moves++;
     draw();
 }
 
@@ -90,12 +90,12 @@ function draw() {
     }
 }
 
-function scoreCard(){
+function scoreCard() {
     if (game.currentPlayer == "X") {
-        game.playerXcount ++;
+        game.playerXcount++;
         playerxscore.innerHTML = "Player X :- " + game.playerXcount;
-    } else if(game.currentPlayer == "O"){
-        game.playerOcount ++;
+    } else if (game.currentPlayer == "O") {
+        game.playerOcount++;
         playeroscore.innerHTML = "Player O :- " + game.playerOcount;
     }
 }
@@ -108,7 +108,7 @@ function winner(a, b, c) {
     scoreCard();
 }
 
-function clearWinner(){
+function clearWinner() {
     winners.innerHTML = "";
 }
 // Here we set the function of the reply button to reset the game when players are done.
@@ -121,4 +121,13 @@ function clear() {
     }
 };
 
-replayButton.addEventListener("click", clear)
+replayButton.addEventListener("click", function () {
+    for (var i = 0; i < game.boardplaces.length; i++) {
+        game.boardplaces[i].innerHTML = "";
+        game.moves = 0;
+        game.playerOcount = 0;
+        game.playerXcount = 0;
+        playerxscore.innerHTML = "Player X :- " + game.playerXcount;
+        playeroscore.innerHTML = "Player O :- " + game.playerOcount;
+    }
+});
